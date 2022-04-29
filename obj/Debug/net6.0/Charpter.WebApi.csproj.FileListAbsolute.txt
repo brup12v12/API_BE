@@ -53,3 +53,8 @@ C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebA
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\obj\Debug\net6.0\Charpter.WebApi.pdb
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\obj\Debug\net6.0\Charpter.WebApi.genruntimeconfig.cache
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\obj\Debug\net6.0\ref\Charpter.WebApi.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\obj\Debug\net6.0\Charpter.WebApi.MvcApplicationPartsAssemblyInfo.cs
