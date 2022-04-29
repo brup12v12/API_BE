@@ -1,4 +1,5 @@
 using Charpter.WebApi.Contexts;
+using Charpter.WebApi.Interfaces;
 using Charpter.WebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,14 +7,30 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader()  //.WithHeaders();
+        .AllowAnyMethod(); //.WithMethods();
+        
+   
+    });
+    
+
+});
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Version = "v1", Title = "CharpterWebApi" });
-}); 
+});
 
 builder.Services.AddScoped<CharpterContext, CharpterContext>();
 
 builder.Services.AddTransient<LivroRepository, LivroRepository>();
+
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 var app = builder.Build();
 
@@ -27,7 +44,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseSwagger();
 
-app.UseSwaggerUI(c => 
+app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "CharpterWebApi");
     c.RoutePrefix = String.Empty;
@@ -38,6 +55,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

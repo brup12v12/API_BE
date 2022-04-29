@@ -28,5 +28,7 @@ namespace Charpter.WebApi.Contexts
         //dbset representa as entidades  que serão utilizadas nas operãções de leitura, criação , atualização e deleção;
 
         public DbSet<Livro>? Livros { get; set; }
+
+        public DbSet<Usuario>? Usuarios { get; set; }   
     }
 }
