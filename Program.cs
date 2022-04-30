@@ -1,6 +1,7 @@
 using Charpter.WebApi.Contexts;
 using Charpter.WebApi.Interfaces;
 using Charpter.WebApi.Repositories;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,16 +15,34 @@ builder.Services.AddCors(options =>
         builder.WithOrigins("http://localhost:3000")
         .AllowAnyHeader()  //.WithHeaders();
         .AllowAnyMethod(); //.WithMethods();
-        
-   
+
+
     });
-    
+
 
 });
 
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Version = "v1", Title = "CharpterWebApi" });
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultChallengeScheme = "JwtBearer";
+    options.DefaultAuthenticateScheme = "JwtBearer";
+}).AddJwtBearer("JwtBearer", options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chapter-chave-autenticacao")),
+        ClockSkew = TimeSpan.FromMinutes(60),
+        ValidIssuer = "chapter.webapi",
+        ValidAudience = "chapter.webapi"
+    };
 });
 
 builder.Services.AddScoped<CharpterContext, CharpterContext>();
@@ -57,6 +76,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseCors("CorsPolicy");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

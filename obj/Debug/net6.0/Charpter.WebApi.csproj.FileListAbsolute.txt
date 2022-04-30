@@ -58,3 +58,4 @@ C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebA
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\obj\Debug\net6.0\Charpter.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\brup1\OneDrive\Área de Trabalho\Curso\UC11\Chapter.WebApi\Chapter.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
